@@ -33,7 +33,6 @@ The current weather station uses:
 * ESP32 development board
 * BME280 temperature, humidity, and pressure sensor
 * 18650 lithium-ion battery
-* TP4056 lithium-ion charging module
 * MT3608 boost converter
 * Resistor voltage divider for battery monitoring
 * 3D-printed enclosure
