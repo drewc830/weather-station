@@ -1,4 +1,3 @@
-# weather-station
 # Weather Station
 
 A modular ESP32-based sensor platform for collecting environmental and system data, transmitting it to a server, and visualizing measurements over time.
