@@ -76,7 +76,7 @@ pio device monitor
 
 ## Power Management
 
-The weather station is powered by a single 18650 lithium-ion cell. The battery supplies an MT3608 boost converter, which provides the regulated supply used by the weather station electronics.
+The weather station is powered by a single 18650 lithium-ion cell. The battery voltage is boosted by an MT3608 boost converter, which provides the regulated supply used by the weather station electronics.
 
 Because continuous operation of the ESP32 and Wi-Fi radio would result in unnecessarily high power consumption, the firmware uses the ESP32's deep-sleep mode between measurements.
 
