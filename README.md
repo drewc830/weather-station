@@ -3,6 +3,16 @@
 This project is a battery-powered environmental monitoring system built around an ESP32 and BME280 sensor. It measures temperature, relative humidity, atmospheric pressure, Wi-Fi signal strength, and battery state, then transmits the measurements over Wi-Fi to a self-hosted server for storage and visualization.
 
 The project was designed as a modular sensor platform rather than a single-purpose weather station. The ESP32 firmware handles sensor acquisition, battery monitoring, network communication, and power management, while a separate server stack receives and stores the measurements and provides historical visualization.
+## Prototype
+
+### Closed enclosure
+
+![Closed weather station prototype](images/v1_closed.jpg)
+
+### Open enclosure
+
+![Weather station internal components](images/v1_open.jpg)
+
 
 ## System Architecture
 
