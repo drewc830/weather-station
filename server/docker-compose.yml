@@ -1,0 +1,48 @@
+services:
+  influxdb:
+    image: influxdb:2.7
+    container_name: nodal-influxdb
+    restart: unless-stopped
+    ports:
+      - "8086:8086"
+    volumes:
+      - influxdb-data:/var/lib/influxdb2
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: admin
+      DOCKER_INFLUXDB_INIT_PASSWORD: nodal-demo-password
+      DOCKER_INFLUXDB_INIT_ORG: nodal
+      DOCKER_INFLUXDB_INIT_BUCKET: weather
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: nodal-demo-influx-token
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: nodal-grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana-data:/var/lib/grafana
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: nodal-demo-password
+    depends_on:
+      - influxdb
+
+  api:
+    build: ./api
+    container_name: nodal-api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      INFLUX_URL: http://influxdb:8086
+      INFLUX_TOKEN: nodal-demo-influx-token
+      INFLUX_ORG: nodal
+      INFLUX_BUCKET: weather
+    depends_on:
+      - influxdb
+
+volumes:
+  influxdb-data:
+  grafana-data:
