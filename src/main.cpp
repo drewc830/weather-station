@@ -12,9 +12,6 @@
 #define SDA_PIN 4
 #define SCL_PIN 5
 
-
-const char* serverUrl = "http://192.168.0.67:8000/weather";  //
-
 Adafruit_BME280 bme;
 
 //Function to estimate the battery percent from voltage
