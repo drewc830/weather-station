@@ -1,6 +1,7 @@
 # PlatformIO
 .pio/
 .vscode/
+include/secrets.h
 
 # Secrets
 src/secrets.h
